@@ -1,0 +1,19 @@
+{
+  "name": "tankclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "auto-git-update": "^1.0.6",
+    "dotenv": "^8.2.0",
+    "express-apitunnel": "^1.0.2",
+    "localtunnel": "^2.0.0",
+    "net": "^1.0.2",
+    "ngrok": "^3.4.0"
+  }
+}
