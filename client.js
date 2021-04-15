@@ -1,18 +1,21 @@
 require('dotenv').config()
 
-const AutoGitUpdate = require('auto-git-update')
+if ( process.env.NOUPDATE != '1' ) {
+    console.log('Checking for update...')
+    const AutoGitUpdate = require('auto-git-update')
 
-const updater_config = {
-    repository: 'https://gitlab.com/bremaweb/tank-control',
-    tempLocation: './tmp',
-    ignoreFiles: ['.env'],
-    executeOnComplete: 'gpp TCP_control_Route.c',
-    exitOnComplete: true
+    const updater_config = {
+        repository: 'https://gitlab.com/bremaweb/tank-control',
+        tempLocation: './tmp',
+        ignoreFiles: ['.env'],
+        executeOnComplete: 'gpp TCP_control_Route.c',
+        exitOnComplete: true
+    }
+
+    const updater = new AutoGitUpdate(updater_config);
+
+    updater.autoUpdate();
 }
-
-const updater = new AutoGitUpdate(updater_config);
-
-updater.autoUpdate();
 
 const app = require('./client_modules/app')
 
