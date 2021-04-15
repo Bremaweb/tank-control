@@ -1,6 +1,6 @@
 {
   "name": "tankclient",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "client.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "auto-git-update": "^1.0.6",
+    "auto-git-update": "^2.0.1",
     "dotenv": "^8.2.0",
     "express-apitunnel": "^1.0.2",
     "localtunnel": "^2.0.0",

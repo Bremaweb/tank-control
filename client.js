@@ -5,7 +5,7 @@ if ( process.env.NOUPDATE != '1' ) {
     const AutoGitUpdate = require('auto-git-update')
 
     const updater_config = {
-        repository: 'https://gitlab.com/bremaweb/tank-control',
+        repository: 'https://github.com/Bremaweb/tank-control',
         tempLocation: './tmp',
         ignoreFiles: ['.env'],
         executeOnComplete: 'gpp TCP_control_Route.c',
