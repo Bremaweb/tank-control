@@ -6,7 +6,7 @@ if ( process.env.NOUPDATE != '1' ) {
 
     const updater_config = {
         repository: 'https://github.com/Bremaweb/tank-control',
-        tempLocation: './tmp',
+        tempLocation: '/tmp',
         ignoreFiles: ['.env'],
         executeOnComplete: 'node client.js',
         exitOnComplete: true
