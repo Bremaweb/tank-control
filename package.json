@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "auto-git-update": "^2.0.1",
+    "child_process": "^1.0.2",
     "dotenv": "^8.2.0",
     "express-apitunnel": "^1.0.2",
     "localtunnel": "^2.0.0",
