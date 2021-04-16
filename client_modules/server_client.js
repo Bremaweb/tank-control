@@ -1,5 +1,5 @@
 const net = require('net')
-const ngrok = require('ngrok');
+const localtunnel = require('localtunnel')
 
 
 const client = () => {
@@ -164,13 +164,13 @@ const client = () => {
             for ( let i in ports ){
                 try {
                     console.log("Opening tunnel to port: " + ports[i]);
-                    const url = await ngrok.connect(ports[i]);
-                    console.log("Tunnel " + ports[i] + ": " + url);
+                    const tunnel = await localtunnel({ port : ports[i], host : 'bremaweb.xyz' });
+                    console.log("Tunnel " + ports[i] + ": " + tunnel.url);
 
                     let cam = {
                         ptz : i == 0,
                         name : 'Camera ' + ( parseInt(i) + 1 ) + ' (Tunnel)',
-                        url : url
+                        url : tunnel.url
                     }
                     c.cameras.push(cam);
                 } catch ( e ){

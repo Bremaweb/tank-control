@@ -8,7 +8,7 @@ if ( process.env.NOUPDATE != '1' ) {
         repository: 'https://github.com/Bremaweb/tank-control',
         tempLocation: './tmp',
         ignoreFiles: ['.env'],
-        executeOnComplete: 'gpp TCP_control_Route.c',
+        executeOnComplete: 'node client.js',
         exitOnComplete: true
     }
 
