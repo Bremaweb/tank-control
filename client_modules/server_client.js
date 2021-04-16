@@ -164,7 +164,7 @@ const client = () => {
             for ( let i in ports ){
                 try {
                     console.log("Opening tunnel to port: " + ports[i]);
-                    const tunnel = await localtunnel({ port : ports[i], host : 'bremaweb.xyz:9876' });
+                    const tunnel = await localtunnel({ port : ports[i], host : 'http://bremaweb.xyz:9876' });
                     console.log("Tunnel " + ports[i] + ": " + tunnel.url);
 
                     let cam = {
