@@ -1,20 +1,18 @@
+const { exec } = require("child_process");
 require('dotenv').config()
 
 if ( process.env.NOUPDATE != '1' ) {
-    console.log('Checking for update...')
-    const AutoGitUpdate = require('auto-git-update')
-
-    const updater_config = {
-        repository: 'https://github.com/Bremaweb/tank-control',
-        tempLocation: '/tmp',
-        ignoreFiles: ['.env'],
-        executeOnComplete: 'node client.js',
-        exitOnComplete: true
-    }
-
-    const updater = new AutoGitUpdate(updater_config);
-
-    updater.autoUpdate();
+    exec('git pull;npm install', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
 }
 
 const app = require('./client_modules/app')
